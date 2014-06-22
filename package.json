@@ -2,8 +2,9 @@
   "name": "calvin",
   "version": "0.0.1",
   "description": "Calvin Quotes",
-  "main": "index.js",
+  "main": "web.js",
   "scripts": {
+    "start": "node web.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/techieshark/slack-calvin/issues"
   },
-  "homepage": "https://github.com/techieshark/slack-calvin"
+  "homepage": "https://github.com/techieshark/slack-calvin",
+  "dependencies": {
+    "express": "^4.4.4",
+    "html-entities": "^1.0.10",
+    "logfmt": "^1.1.2"
+  }
 }
