@@ -11,29 +11,14 @@ var app = express();
 
 app.use(logfmt.requestLogger());
 
-// sample = "\
-// 	MOM, CAN I SET FIRE TO MY BED MATTRESS?&quot; &quot;No, Calvin.&quot; &quot;CAN I RIDE MY\
-// TRICYCLE ON THE ROOF? &quot;No, Calvin.&quot; &quot;Then can I have a cookie?&quot; &quot;No, Calvin.&quot;\
-// (She's on to me.&quot;)\
-// ";
-
-// function puts(error, stdout, stderr) { 
-// 	sys.puts(stdout);
-// 	sys.puts("--------");
-// 	sys.puts(stdout.replace(/&quot;/g,'"')); 
-// }
-
-//exec('curl "http://www.iheartquotes.com/api/v1/random?source=calvin&show_permalink=false&show_source=false" | sed -e "s/&quot;/\"/', puts);
-// puts(null, sample, null);
-
 app.get('/', function(req, res) {
 
 	function puts(error, stdout, stderr) {
 		// since Slack just wants text, we need to pass back " and ' instead of html special entities. 
-		res.send(entities.decode(stdout)); //.replace(/&[rl]*[d]*quo[t]*;/g, '"').replace(/&[rl]squo;/g, "'"
+		res.send(entities.decode(stdout));
 	}
 
-  exec('curl "http://www.iheartquotes.com/api/v1/random?source=calvin&show_permalink=false&show_source=false" | sed -e "s/&quot;/\"/', puts);
+  exec('curl "http://www.iheartquotes.com/api/v1/random?source=calvin&show_permalink=false&show_source=false"', puts);
 
 });
 
