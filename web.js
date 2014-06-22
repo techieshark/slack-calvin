@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 
 	function puts(error, stdout, stderr) {
 		// since Slack just wants text, we need to pass back " and ' instead of html special entities. 
-		res.send(stdout + entities.decode(stdout)); //.replace(/&[rl]*[d]*quo[t]*;/g, '"').replace(/&[rl]squo;/g, "'"
+		res.send(entities.decode(stdout)); //.replace(/&[rl]*[d]*quo[t]*;/g, '"').replace(/&[rl]squo;/g, "'"
 	}
 
   exec('curl "http://www.iheartquotes.com/api/v1/random?source=calvin&show_permalink=false&show_source=false" | sed -e "s/&quot;/\"/', puts);
