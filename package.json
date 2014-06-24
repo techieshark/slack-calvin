@@ -23,6 +23,7 @@
   "dependencies": {
     "express": "^4.4.4",
     "html-entities": "^1.0.10",
-    "logfmt": "^1.1.2"
+    "logfmt": "^1.1.2",
+    "string_decoder": "^0.10.25-1"
   }
 }
