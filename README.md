@@ -25,7 +25,7 @@ I'm sure this will increase your productivity by 200% (no guarantees though).
 
 More info on the quotes API we use: http://iheartquotes.com/api
 
-The reason for this code's existence is simply to decode html entities like so quotes look right in Slack.  This is what I was seeing when just using the iheartquotes api directly:
+The reason for this code's existence is simply to decode html entities so quotes look right in Slack.  This is what I was seeing when just using the iheartquotes api directly:
 
 ```` 
 &quot;I don't know which is worse,  ...that everyone has his price, or that 
